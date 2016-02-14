@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 /**
@@ -23,6 +24,12 @@ public class MainActivityFragment extends Fragment {
 
     View v = inflater.inflate(R.layout.fragment_main, container, false);
     mWebView = (WebView) v.findViewById(R.id.activity_main_webview);
+
+    // Enable Javascript
+    WebSettings webSettings = mWebView.getSettings();
+    webSettings.setJavaScriptEnabled(true);
+
+    mWebView.loadUrl("http://beta.html5test.com/");
 
     return v;
   }
