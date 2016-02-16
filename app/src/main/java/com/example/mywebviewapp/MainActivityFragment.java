@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -28,6 +29,9 @@ public class MainActivityFragment extends Fragment {
     // Enable Javascript
     WebSettings webSettings = mWebView.getSettings();
     webSettings.setJavaScriptEnabled(true);
+
+    // Force links and redirects to open in the WebView instead of in a browser.
+    mWebView.setWebViewClient(new WebViewClient());
 
     mWebView.loadUrl("http://beta.html5test.com/");
 
